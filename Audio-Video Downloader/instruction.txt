@@ -1,0 +1,16 @@
+While installing pytube, we have to make some changes in one of the module files named 'cipher.py'
+
+1.    In order to solve the problem, you should go in the cipher.py file and replace the line 30, which is:
+
+    var_regex = re.compile(r"^\w+\W")
+
+    With that line:
+
+    var_regex = re.compile(r"^\$*\w+\W")
+
+
+2.    Changing line 287 of cipher.py to exactly
+
+    'var {nfunc}\s*=\s*(\[.+?\])'.format(
+
+    removing the ; at the end
